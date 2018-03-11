@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>高血圧かどうかを判定する</title>
+    <script>
+        window.onload = function() {
+            document.getElementById("button").onclick = function() {
+                // 収縮期血圧(最高血圧)を取得
+                var hp = parseFloat(document.getElementById("highpressure").value);
+                // 拡張期血圧(最低血圧)
+                var lp = parseFloat(document.getElementById("lowpressure").value);
+                // 判定結果を書き出す要素
+                var judgement = document.getElementById("judgement");
+                // 高血圧かどうかを判定して要素に書き出す
+                if (hp < 130 && lp < 85) {
+                    judgement.innerHTML = "あなたは正常高血圧です。";
+                } else {
+                    judgement.innerHTML = "あなたは高血圧です。";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+   <p>収縮期血圧(最高血圧):<input type="number" id="highpressure"></p>
+   <p>拡張期血圧(最低血圧):<input type="number" id="lowpressure"></p>
+   <p id="judgement">ここに判定結果が表示されます</p>
+   <input type="button" id="button" value="判定">
+</body>
+</html>
