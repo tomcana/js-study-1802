@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>閏年を判定する関数</title>
+
+</head>
+<body>
+   <input type="text" id="txt" value="">
+   <input type="button" value="ボタン" onclick="isLeapYear()">
+   <script>
+        function isLeapYear() {
+            var inputTxt = document.getElementById('txt').value;
+            var hantei;
+            console.log(inputTxt);
+
+            if(inputTxt%400 == 0 || ((inputTxt%4 == 0)&&(inputTxt%100 != 0))) {
+                hantei = true;
+            } else {
+            hantei = false;
+            }
+            console.log(hantei);
+        }
+    </script>
+</body>
+</html>
