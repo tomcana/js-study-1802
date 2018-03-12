@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>線形探索</title>
+    <script>
+        function linearSearch(x,a) {
+            var i = 0;
+            var n = a.length;
+
+            while(i<n && x>a[i]) i++;
+            // iteratorがaのlengthまで、かつ、探している数値がarrayの数値よりも大きい間
+            if(x ==a[i]) return i;
+            // 一致するものが来たら、返す
+            return null;
+        }
+        var a = [2,4,7,12,15,21,34,35,46,57,70,82,86,92,99];
+        console.log(linearSearch(35,a));
+    </script>
+</head>
+<body>
+</body>
+</html>
