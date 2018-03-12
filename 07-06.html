@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>線形探索</title>
+    <script>
+        function binarySearch(x,a) {
+            var n = a.length;
+            var left = 0, right = n-1;
+
+            while( left < right ) {
+                // 左0から右15まで
+                var middle = Math.floor((left+right)/2);
+                if(x<=a[middle]) {
+                // 探している数値が真ん中よりも小さかったら
+                // 右の値を半分の値に書き換える
+                    right = middle;
+                } else {
+                // そうでなければ真ん中よりも右にleftを書き換える
+                    left = middle+1;
+                }
+                console.log("left" + left);
+                console.log("right" + right);
+            }
+            if(x == a[right]) return right;
+            return null;
+        }
+        var a = [2,4,7,12,15,21,34,35,46,57,70,82,86,92,99];
+        console.log(binarySearch(86,a));
+    </script>
+</head>
+<body>
+</body>
+</html>
